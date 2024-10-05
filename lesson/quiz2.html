@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoplanet Explorer - Quiz 1</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        .course {
+            padding: 20px; /* Add padding around the course section */
+            background: rgba(0, 0, 0, 0.7); /* Slightly translucent background */
+            border-radius: 10px; /* Rounded corners */
+            margin: 20px auto; /* Centering the content */
+            max-width: 1400px; /* Limit the maximum width for readability */
+            color: white; /* Set text color to white */
+            font-family: 'Poppins', sans-serif; /* Use the Poppins font for better readability */
+        }
+
+        .wrong-ans-text {
+            display: none;
+        }
+
+        .right-ans-text {
+            display: none;
+            color: #228B22;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Content (Buttons + Path) -->
+    <div class="course">
+        <h2>Lesson Quiz: Exoplanets</h2>
+
+        <div class="quiz-section" id="question1">
+            <h3>Question 1: What is the primary composition of rocky exoplanets?</h3>
+            <input type="radio" name="q1" id="q1A" value="A"> A) Hydrogen and helium <br>
+            <input type="radio" name="q1" id="q1B" value="B"> B) Silicates and metals <br>
+            <input type="radio" name="q1" id="q1C" value="C"> C) Water, ammonia, and methane <br>
+            <input type="radio" name="q1" id="q1D" value="D"> D) Oxygen and nitrogen <br>
+            <h2 class="right-ans-text" id="q1_right">Right Answer!</h2>
+            <h2 class="wrong-ans-text" id="q1_wrong">Correct Answer: B)</h2>
+        </div>
+        
+        <!-- Question 2 -->
+        <div class="quiz-section" id="question2">
+            <h3>Question 2: Which type of exoplanet has a solid surface?</h3>
+            <input type="radio" name="q2" id="q2A" value="A"> A) Gas Giant <br>
+            <input type="radio" name="q2" id="q2B" value="B"> B) Ice Giant <br>
+            <input type="radio" name="q2" id="q2C" value="C"> C) Terrestrial <br>
+            <input type="radio" name="q2" id="q2D" value="D"> D) Mini-Neptune <br>
+            <h2 class="right-ans-text" id="q2_right">Right Answer!</h2>
+            <h2 class="wrong-ans-text" id="q2_wrong">Correct Answer: C)</h2>
+        </div>
+        
+        <!-- Question 3 -->
+        <div class="quiz-section" id="question3">
+            <h3>Question 3: What factor(s) influence the atmosphere of an exoplanet?</h3>
+            <input type="radio" name="q3" id="q3A" value="A"> A) Distance from star <br>
+            <input type="radio" name="q3" id="q3B" value="B"> B) Type of star <br>
+            <input type="radio" name="q3" id="q3C" value="C"> C) Planet size and composition <br>
+            <input type="radio" name="q3" id="q3D" value="D"> D) All of the above <br>
+            <h2 class="right-ans-text" id="q3_right">Right Answer!</h2>
+            <h2 class="wrong-ans-text" id="q3_wrong">Correct Answer: D)</h2>
+        </div>
+        
+        <!-- Question 4 -->
+        <div class="quiz-section" id="question4">
+            <h3>Question 4: What is the characteristic that distinguishes a Hot Jupiter from a Cold Jupiter?</h3>
+            <input type="radio" name="q4" id="q4A" value="A"> A) Size <br>
+            <input type="radio" name="q4" id="q4B" value="B"> B) Composition <br>
+            <input type="radio" name="q4" id="q4C" value="C"> C) Distance from its star <br>
+            <input type="radio" name="q4" id="q4D" value="D"> D) Orbital period <br>
+            <h2 class="right-ans-text" id="q4_right">Right Answer!</h2>
+            <h2 class="wrong-ans-text" id="q4_wrong">Correct Answer: C)</h2>
+        </div>
+        
+        <!-- Question 5 -->
+        <div class="quiz-section" id="question5">
+            <h3>Question 5: Which type of exoplanet has a mass range of 1-1000 Earth masses and a density range of 0.5-50 g/cm³?</h3>
+            <input type="radio" name="q5" id="q5A" value="A"> A) Terrestrial Exoplanet <br>
+            <input type="radio" name="q5" id="q5B" value="B"> B) Gas Giant Exoplanet <br>
+            <input type="radio" name="q5" id="q5C" value="C"> C) Ice Giant Exoplanet <br>
+            <input type="radio" name="q5" id="q5D" value="D"> D) All types of exoplanets <br>
+            <h2 class="right-ans-text" id="q5_right">Right Answer!</h2>
+            <h2 class="wrong-ans-text" id="q5_wrong">Correct Answer: D)</h2>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="next-lesson-button" onclick="submitFunc()">Check Answers</button>
+    </div>
+
+    <div class="button-container" id="next" style="display: none;">
+        <a href="lesson3.html"><button class="next-lesson-button">Next Lesson</button></a>
+    </div>
+
+    <script>
+        function submitFunc() {
+            if (document.getElementById('q1B').checked == true) {
+                document.getElementById('q1_right').style.display = "block";
+            }
+            else if (document.getElementById('q1B').checked == false) {
+                document.getElementById('q1_wrong').style.display = "block";
+            }
+            if (document.getElementById('q2C').checked == true) {
+                document.getElementById('q2_right').style.display = "block";
+            }
+            else if (document.getElementById('q2C').checked == false) {
+                document.getElementById('q2_wrong').style.display = "block";
+            }
+            if (document.getElementById('q3D').checked == true) {
+                document.getElementById('q3_right').style.display = "block";
+            }
+            else if (document.getElementById('q3D').checked == false) {
+                document.getElementById('q3_wrong').style.display = "block";
+            }
+            if (document.getElementById('q4C').checked == true) {
+                document.getElementById('q4_right').style.display = "block";
+            }
+            else if (document.getElementById('q4C').checked == false) {
+                document.getElementById('q4_wrong').style.display = "block";
+            }
+            if (document.getElementById('q5D').checked == true) {
+                document.getElementById('q5_right').style.display = "block";
+            }
+            else if (document.getElementById('q5D').checked == false) {
+                document.getElementById('q5_wrong').style.display = "block";
+            }
+
+            window.setTimeout(function () {
+                document.getElementById('next').style.display = "block";
+            }, 1500)
+        }
+    </script>
+</body>
+</html>

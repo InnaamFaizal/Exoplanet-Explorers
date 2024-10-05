@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space-Themed Certificate Generator</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        canvas {
+            border: 2px solid #fff;
+            margin-top: 20px;
+            background-color: #1a1a1a;
+        }
+
+        h1 {
+            color: #FFD700;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exoplanet Course Completion</h1>
+    <form id="certificateForm">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Get Certificate</button>
+    </form>
+    <canvas id="certificateCanvas" width="800" height="600"></canvas>
+    <script>
+        document.getElementById('certificateForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            generateCertificate(name);
+        });
+
+        function generateCertificate(name) {
+            const canvas = document.getElementById('certificateCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Clear the canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw certificate background
+            ctx.fillStyle = '#1a1a1a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw stars
+            for (let i = 0; i < 100; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const radius = Math.random() * 2;
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 0, 2 * Math.PI);
+                ctx.fillStyle = '#fff';
+                ctx.fill();
+            }
+
+            // Draw certificate border
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 10;
+            ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+
+            // Add text
+            ctx.fillStyle = '#FFD700';
+            ctx.font = '40px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Certificate of Completion', canvas.width / 2, 100);
+
+            ctx.font = '30px Arial';
+            ctx.fillText('This certificate is awarded to', canvas.width / 2, 200);
+
+            ctx.font = '35px Arial';
+            ctx.fillText(name, canvas.width / 2, 300);
+
+            ctx.font = '30px Arial';
+            ctx.fillText('for having extraordinary talent in', canvas.width / 2, 400);
+            ctx.fillText('Exoplanet Knowledge', canvas.width / 2, 450);
+
+            ctx.font = "15px Arial";
+            ctx.fillText('From Team ASTROSUN', canvas.width - 200, 500);
+        }
+    </script>
+</body>
+</html>

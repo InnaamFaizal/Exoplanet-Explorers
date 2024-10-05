@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoplanet Explorer - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        .course {
+            display: flex;
+            justify-content: space-around; /* Space out buttons evenly */
+            width: 100%; /* Full width for buttons */
+        }
+        .connection {
+            font-size: 50px;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+    <script
+        id="ChatcubeScript"
+        src="https://chatcube.co/api/chat-iframe"
+        data-id="b740c254-602b-44dd-8656-d67fafff04dd"
+        message-text="Hey! What do you need help with?"
+        color="#bb86fc"
+        defer>
+    </script>
+</head>
+<body>
+
+    <!-- Galaxy-Themed Header Banner -->
+    <header class="galaxy-banner">
+        <h1>Exoplanet Explorer</h1>
+        <p>Explore new worlds, through a screen.</p>
+    </header>
+
+    <!-- Main Content (Buttons + Path) -->
+    <div class="main-content">
+        <div class="course">
+            <div class="lesson-container left">
+                <div class="lesson-number">1</div> <!-- Lesson number for Lesson 1 -->
+                <button class="star-button" onclick="toggleLessonDetails(1)">★</button>
+                <div id="lesson1-details" class="lesson-details">
+                    <h3>Lesson 1: How to Find Exoplanets</h3>
+                    <br>
+                    <a href="lesson/lesson1.html"><button class="start-quiz-button">Start Lesson</button></a>
+                </div>
+            </div>
+            <div class="connection">...................................</div>
+
+            <div class="lesson-container center">
+                <div class="lesson-number">2</div> <!-- Lesson number for Lesson 2 -->
+                <button class="star-button disabled">★</button>
+            </div>
+
+            <div class="connection">...............................</div>
+            <div class="lesson-container right">
+                <div class="lesson-number">3</div> <!-- Lesson number for Lesson 3 -->
+                <button class="star-button disabled">★</button>
+            </div>
+        </div>
+    </div>
+    <a href="https://eyes.nasa.gov/apps/exo/#/" target="_new"><button class="next-lesson-button">Explore the universe in a model!</button></a>
+    <script src="js/script.js"></script>
+</body>
+</html>

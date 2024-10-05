@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure consistent box sizing */
+}
+
+body {
+    /* Background styles already defined */ 
+    background: linear-gradient(to bottom right, #1a237e, #311b92, #6200ea);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Galaxy-Themed Header */
+.galaxy-banner {
+    color: white;
+    padding: 60px 20px; /* Added padding for a full-page feel */
+    text-align: center;
+    background: url("galaxybgdark.jpg") center no-repeat;
+    background-size: cover;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    font-family: 'Poppins', sans-serif; /* Updated font */
+}
+
+.galaxy-banner h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+
+.galaxy-banner p {
+    font-size: 1.6em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    margin-right: 20px; /* Add space between scrollbar and right side */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3); /* Semi-translucent white */
+    border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #6200ea, #bb86fc); /* Gradient for scrollbar */
+    border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #bb86fc, #6200ea); /* Darker gradient on hover */
+}
+
+
+/* Main Content */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 360px); /* Adjusted height considering header */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+
+/* Lesson Button Container */
+.lesson-container {
+    position: relative;
+    margin: 0 20px; /* Spacing between buttons */
+}
+
+/* Galaxy-Themed Buttons */
+.star-button {
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 2.5em;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    animation: bounce 1s infinite alternate; /* Added bounce animation */
+}
+
+.star-button.clicked {
+    background-color: #bb86fc;
+    box-shadow: 0px 6px 18px rgba(187, 134, 252, 0.7);
+}
+
+/* Hover effect */
+.star-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(98, 0, 234, 0.7);
+}
+
+.disabled {
+    background-color: #996a0c92;
+}
+
+.disabled:hover {
+    background-color: #e92424;
+    cursor: not-allowed;
+}
+
+/* Popup Styling */
+@keyframes popupAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scaleY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1.1); /* Slightly scale up for a bounce effect */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1); /* Set to final position */
+    }
+}
+
+/* Updated Popup Styling */
+.lesson-details {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100px;
+    left: -50px;
+    background: linear-gradient(to bottom, #6200ea, #bb86fc); /* Gradient background */
+    border: 2px solid #bb86fc;
+    padding: 20px;
+    width: 250px; /* Increased width for better aesthetics */
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(10px); /* Initial translate position */
+    transition: opacity 0.4s ease; /* Transition for opacity only */
+    font-family: "Poppins";
+    font-size: 12.5px;
+}
+
+/* Show the popup smoothly with animation */
+.lesson-details.show {
+    display: block; /* Set display block to show */
+    opacity: 1;
+    animation: popupAnimation 0.4s ease forwards; /* Apply the animation */
+}
+
+/* Popup Text Styles */
+.lesson-details h3 {
+    font-size: 1.5em; /* Increase font size */
+    color: white; /* Set text color to white */
+    margin: 0; /* Remove margin */
+}
+
+/* Start Quiz Button */
+.start-quiz-button {
+    background-color: #6200ea;
+    border: none;
+    padding: 12px 20px; /* Increased padding */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Poppins';
+    color: white;
+}
+
+.start-quiz-button:hover {
+    background-color: #bb86fc;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.next-lesson-button {
+    background-color: #bb86fc;
+    border: none;
+    padding: 12px 20px; /* Increased padding */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Poppins';
+    color: white;
+}
+
+.next-lesson-button:hover {
+    background-color: #1f0343;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.button-container {
+    width: 95vw;
+    text-align: right;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+/* Lesson Number Styling */
+.lesson-number {
+    font-size: 2em; /* Increase font size */
+    color: white; /* Set color to white for contrast */
+    text-align: center; /* Center the text */
+    margin-bottom: 10px; /* Space between number and button */
+}
+
+/* Updated Lesson Number Styling */
+.lesson-number {
+    font-size: 2em; /* Increase font size */
+    color: white; /* Set color to white for contrast */
+    text-align: center; /* Center the text */
+    margin-bottom: 10px; /* Space between number and button */
+    opacity: 1; /* Start visible */
+    font-family: 'Varela Round';
+}
+
+/* Active class for bounce animation */
+.lesson-container .lesson-number {
+    animation: bounce 1s infinite alternate; /* Apply bounce animation */
+}
+
+/* Other styles remain the same... */
+
+/* Add any other styles you have for your buttons, details, etc. */h
+
+h2 {
+    font-size: 2.5rem; /* Big heading for the lesson */
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #1362ac; /* Gold color for the heading */
+}
+
+.section-box {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Border with some transparency */
+    border-radius: 8px; /* Rounded corners for the boxes */
+    padding: 20px; /* Padding inside each box */
+    margin: 15px 0; /* Space above and below each box */
+    width: 100%; /* Ensure boxes cover full width */
+}
+
+h3 {
+    color: #1d61f3; /* Gold color for section headings */
+    font-size: 1.5rem; /* Font size for section headings */
+}
+
+p {
+    font-size: 1rem; /* Font size for paragraphs */
+    line-height: 1.6; /* Better line spacing */
+}
+
+ul {
+    list-style-type: disc; /* Use disc style for unordered lists */
+    padding-left: 20px; /* Indent the list */
+    margin: 10px 0; /* Space around the list */
+    color: white; /* Set list text color to white */
+}
+
+.combined {
+    display: flex;
+    justify-content: space-around; /* Space out buttons evenly */
+    width: 100%; /* Full width for buttons */
+}
+
+.headerimg {
+    float: right;
+}
